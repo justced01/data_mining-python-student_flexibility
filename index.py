@@ -80,8 +80,6 @@ network = StringVar()
 network.set("4G")
 network_label = Label(frame10, text = "Q10: What is your network type?", anchor = "w", font = ("Comic Sans", 11), padx = 10, pady = 5).pack(fill = "x", side = "left")
 network_menu = OptionMenu(frame10, network, "4G", "3G", "2G").pack(fill = "x", side = "left")
-# label10 = Label(root, text = "Q10: What is your network type?", width = 35, anchor = "w").grid(row = 11, column = 0)
-# input10 = Entry(root, width = 30).grid(row = 11, column = 1)
 
 # DOCU: This block of codes will render the buttons in GUI
 submit_frame = Frame(root)
