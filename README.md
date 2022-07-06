@@ -3,3 +3,8 @@ Developed by:
 &nbsp; Chacon, Alissa Carla  
 &nbsp; Dela Carcel, Cedrick  
 &nbsp; Miranda, Allyza  
+
+Description: 
+
+Technologies (Python): 
+- Tkinter
