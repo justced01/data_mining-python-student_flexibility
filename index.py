@@ -5,7 +5,66 @@ root.geometry("420x550") # Set GUI dimensions
 root.title("Data Mining - Group 5")
 
 def process():
-    print(educ_level.get() == "School")
+    inputs = []
+    print(educ_level.get(), inst_level.get())
+
+    if educ_level.get() == "School":
+        inputs.append(0)
+    elif educ_level.get() == "University":
+        inputs.append(1)
+    elif educ_level.get() == "College":
+        inputs.append(2)
+
+    if inst_level.get() == "Public":
+        inputs.append(0)
+    elif inst_level.get() == "Private":
+        inputs.append(1)
+
+    if gender.get() == "Male":
+        inputs.append(0)
+    elif gender.get() == "Female":
+        inputs.append(1)
+
+    inputs.append(age.get())
+    
+    if device.get() == "Mobile":
+        inputs.append(0)
+    elif device.get() == "Computer":
+        inputs.append(1)
+    elif device.get() == "Tab":
+        inputs.append(2)
+
+    if if_IT.get() == "Yes":
+        inputs.append(0)
+    elif if_IT.get() == "No":
+        inputs.append(1)
+
+    if type_loc.get() == "Rural":
+        inputs.append(0)
+    elif type_loc.get() == "Town":
+        inputs.append(1)
+
+    if finance.get() == "Poor":
+        inputs.append(0)
+    elif finance.get() == "Mid":
+        inputs.append(1)
+    elif finance.get() == "Rich":
+        inputs.append(2)
+
+    if internet.get() == "Mobile Data":
+        inputs.append(0)
+    elif internet.get() == "Wi-Fi":
+        inputs.append(1)
+
+    if network.get() == "4G":
+        inputs.append(0)
+    elif network.get() == "3G":
+        inputs.append(1)
+    elif network.get() == "2G":
+        inputs.append(2)
+
+    print("Inputs:", inputs)
+
 
 # DOCU: This block of codes will render the headings in GUI
 title = Label(root, text = "Student Flexibility in Online Learning", font = ("Arial Bold", 15), bg = "#202020", fg = "white", padx = 30, pady = 10).pack(fill = X)
@@ -37,7 +96,7 @@ frame4 = Frame(root)
 frame4.place(x = 0, y = 190)
 age = IntVar()
 age_label = Label(frame4, text = "Q4: What is your age?", anchor = "w", font = ("Comic Sans", 11), padx = 10, pady = 5).pack(fill = "x", side = "left")
-age_entry = Entry(frame4).pack(fill = "x", side = "left")
+age_entry = Entry(frame4, textvariable = age).pack(fill = "x", side = "left")
 
 frame5 = Frame(root)
 frame5.place(x = 0, y = 220)
@@ -62,10 +121,10 @@ type_loc_menu = OptionMenu(frame7, type_loc, "Rural", "Town").pack(fill = "x", s
 
 frame8 = Frame(root)
 frame8.place(x = 0, y = 310)
-type_loc = StringVar()
-type_loc.set("Mid")
-type_loc_label = Label(frame8, text = "Q8: What is your financial condition?", anchor = "w", font = ("Comic Sans", 11), padx = 10, pady = 5).pack(fill = "x", side = "left")
-type_loc_menu = OptionMenu(frame8, type_loc, "Poor", "Mid", "Rich").pack(fill = "x", side = "left")
+finance = StringVar()
+finance.set("Poor")
+finance_label = Label(frame8, text = "Q8: What is your financial condition?", anchor = "w", font = ("Comic Sans", 11), padx = 10, pady = 5).pack(fill = "x", side = "left")
+finance_menu = OptionMenu(frame8, finance, "Poor", "Mid", "Rich").pack(fill = "x", side = "left")
 
 frame9 = Frame(root)
 frame9.place(x = 0, y = 340)
