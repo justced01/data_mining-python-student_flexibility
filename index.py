@@ -4,14 +4,14 @@ root = Tk()
 root.geometry("420x550") # Set GUI dimensions
 root.title("Data Mining - Group 5")
 
-def submit():
-    print("Clicked")
+def process():
+    print(educ_level.get() == "School")
 
 # DOCU: This block of codes will render the headings in GUI
 title = Label(root, text = "Student Flexibility in Online Learning", font = ("Arial Bold", 15), bg = "#202020", fg = "white", padx = 30, pady = 10).pack(fill = X)
 instruction = Label(root, text = "Please answer the following required fields.", anchor = "w", font = ("Comic Sans", 11), padx = 10, pady = 5).pack(fill = "both")
 
-# # # DOCU: This block of codes will render the input fields in GUI
+# DOCU: This block of codes will render the input fields in GUI
 frame1 = Frame(root)
 frame1.place(x = 0, y = 100)
 educ_level = StringVar()
@@ -84,6 +84,6 @@ network_menu = OptionMenu(frame10, network, "4G", "3G", "2G").pack(fill = "x", s
 # DOCU: This block of codes will render the buttons in GUI
 submit_frame = Frame(root)
 submit_frame.place(x = 300, y = 400)
-submit = Button(submit_frame, text = "Submit", command = submit, font = ("Comic Sans", 10), bg = "#0066A2", fg = "white", activebackground = "#0066A2", activeforeground = "white", padx = 20).pack(fill = "x", side = "right", padx = 10)
+submit = Button(submit_frame, text = "Submit", command = process, font = ("Comic Sans", 10), bg = "#0066A2", fg = "white", activebackground = "#0066A2", activeforeground = "white", padx = 20).pack(fill = "x", side = "right", padx = 10)
 
 root.mainloop()
